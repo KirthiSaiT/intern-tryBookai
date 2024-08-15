@@ -23,9 +23,7 @@
       --text-secondary: #b3b3b3;
       --gradient-1: linear-gradient(45deg, #726bff, #57b6fe);
       --gradient-2: linear-gradient(45deg, #8a2be2, #4b0082);
-    }
     
-:root {
   --primary-bg: linear-gradient(135deg, #f5f7fa, #c3cfe2);
   --accent-color: #6a11cb;
   --text-color: #333333;
@@ -762,13 +760,13 @@ src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWe
         </button>
         <div class="collapse navbar-collapse space-between" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Features</a>
-            <a class="nav-link" href="#">How it Works</a>
-            <a class="nav-link" href="#">Roadmap</a>
-            <a class="nav-link" href="#">API</a>
-            <a class="nav-link" href="#">Price</a>
-            <a class="nav-link" href="#">Models</a>
-            <a class="nav-link" href="#" id="auth-button">Login / Sign Up</a>
+            <a id="message" class="nav-link active" aria-current="page" href="#">Features</a>
+            <a id="message" class="nav-link" href="#">How it Works</a>
+            <a id="message" class="nav-link" href="#">Roadmap</a>
+            <a  id="message" class="nav-link" href="#">API</a>
+            <a id="message" class="nav-link" href="#">Price</a>
+            <a id="message" class="nav-link" href="#">Models</a>
+            <a  class="nav-link" href="#" id="auth-button">Login / Sign Up</a>
             <button id="theme-toggle" aria-label="Toggle dark mode">
               <i class="fas fa-moon"></i>
             </button>
@@ -778,19 +776,7 @@ src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWe
     </nav>
 </header>
 
-<div id="authModal" class="modal">
-    <div class="modal-content">
-        <span class="close"></span>
-        <h2 id="formTitle">Login</h2>
-        <form id="authForm">
-            <input type="email" id="email" placeholder="Email" required="">
-            <input type="password" id="password" placeholder="Password" required="">
-            <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display: none;" required="">
-            <button type="submit" id="submitButton">Login</button>
-        </form>
-        <div class="switch-link" id="switchLink">Don't have an account? Sign up</div>
-    </div>
-</div>
+
     <section class="hero">
       <h1>
         Explore the Possibilities of
@@ -837,6 +823,19 @@ prefersDarkScheme.addEventListener('change', (e) => {
   localStorage.setItem('theme', shouldBeDark ? 'dark' : 'light');
   updateToggleIcon();
 });
+document.addEventListener('DOMContentLoaded', (event) => {
+    const loginButton = document.getElementById('auth-button');
+    loginButton.addEventListener('click', () => {
+        alert("Well I haven't made any login section so that it I guess");
+    });
+});
+document.addEventListener('DOMContentLoaded', (event) => {
+    const loginButton = document.getElementById('message');
+    loginButton.addEventListener('click', () => {
+        alert("the assignment stated only to do one component so i only did the navbar,dont try clicking other button(it wont work)");
+    });
+});
+
     </script>
   
   </body>
