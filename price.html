@@ -5,7 +5,7 @@
     BookAI: Revolutionary AI-Powered Book Generation | Create Professional
     Books in Minutes
   </title>
- 
+  <!-- main -->
  
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" as="script">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
@@ -25,50 +25,12 @@
       --gradient-2: linear-gradient(45deg, #8a2be2, #4b0082);
     }
     
-:root {
-  --primary-bg: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  --accent-color: #6a11cb;
-  --text-color: #333333;
-  --text-secondary: #666666;
-  --gradient-1: linear-gradient(45deg, #6a11cb, #2575fc);
-  --gradient-2: linear-gradient(45deg, #6a11cb, #2575fc);
-}
-
-
-.dark-mode {
-  --primary-bg: linear-gradient(135deg, #1e0533, #110a1f);
-  --accent-color: #8a2be2;
-  --text-color: #ffffff;
-  --text-secondary: #b3b3b3;
-  --gradient-1: linear-gradient(45deg, #726bff, #57b6fe);
-  --gradient-2: linear-gradient(45deg, #8a2be2, #4b0082);
-}
-
-#theme-toggle {
-  background: none;
-  border: none;
-  color: var(--text-color);
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-#theme-toggle:hover {
-  color: var(--accent-color);
-}
-
-
-body, .button, .cta, .feature-icon, .step-icon, .roadmap-icon {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
     
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      max-width: 100%;
-      max-height: 100%;
     }
 
     body {
@@ -445,6 +407,9 @@ body, .button, .cta, .feature-icon, .step-icon, .roadmap-icon {
     footer a:hover {
       color: var(--text-color);
     }
+    @media (max-width:300px){
+      
+    }
 
     @media (max-width: 768px) {
       header {
@@ -496,7 +461,7 @@ body, .button, .cta, .feature-icon, .step-icon, .roadmap-icon {
     }
     
    
-    
+    /* Add these new styles for the book samples section */
     .book-samples {
       margin-top: 80px;
       text-align: center;
@@ -527,8 +492,8 @@ body, .button, .cta, .feature-icon, .step-icon, .roadmap-icon {
       height: 300px;
       margin: 0 auto 20px;
       background-image: url("https://raw.githubusercontent.com/adarshagupta/trybookai/main/public-assets/paradox.png");
-      background-position: center;
-      background-size: 100% 100%;
+      background-position: center; /* Centers the image */
+      background-size: 100% 100%; /* Stretches the image to cover 100% of width and height */
       border-radius: 5px;
       display: flex;
       justify-content: center;
@@ -545,8 +510,8 @@ body, .button, .cta, .feature-icon, .step-icon, .roadmap-icon {
       height: 300px;
       margin: 0 auto 20px;
       background-image: url("https://raw.githubusercontent.com/adarshagupta/trybookai/main/public-assets/mist.png");
-      background-position: center; 
-      background-size: 100% 100%; 
+      background-position: center; /* Centers the image */
+      background-size: 100% 100%; /* Stretches the image to cover 100% of width and height */
       border-radius: 5px;
       display: flex;
       justify-content: center;
@@ -562,8 +527,8 @@ body, .button, .cta, .feature-icon, .step-icon, .roadmap-icon {
       height: 300px;
       margin: 0 auto 20px;
       background-image: url("https://raw.githubusercontent.com/adarshagupta/trybookai/main/public-assets/ecos.png");
-      background-position: center; 
-      background-size: 100% 100%; 
+      background-position: center; /* Centers the image */
+      background-size: 100% 100%; /* Stretches the image to cover 100% of width and height */
       border-radius: 5px;
       display: flex;
       justify-content: center;
@@ -753,14 +718,14 @@ src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWe
         <div class="logo-icon"></div>
         <img src="https://raw.githubusercontent.com/adarshagupta/trybookai/main/logo.png" width="50px" alt="BookAI Logo">BookAI
       </div>
-     
+     </header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse space-between" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-link active" aria-current="page" href="#">Features</a>
             <a class="nav-link" href="#">How it Works</a>
@@ -769,9 +734,6 @@ src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWe
             <a class="nav-link" href="#">Price</a>
             <a class="nav-link" href="#">Models</a>
             <a class="nav-link" href="#" id="auth-button">Login / Sign Up</a>
-            <button id="theme-toggle" aria-label="Toggle dark mode">
-              <i class="fas fa-moon"></i>
-            </button>
           </div>
         </div>
       </div>
@@ -780,7 +742,7 @@ src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWe
 
 <div id="authModal" class="modal">
     <div class="modal-content">
-        <span class="close"></span>
+        <span class="close">×</span>
         <h2 id="formTitle">Login</h2>
         <form id="authForm">
             <input type="email" id="email" placeholder="Email" required="">
@@ -809,37 +771,7 @@ src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWe
     </section>
 
 
-    </div>
-    <script>
-      const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-
-const currentTheme = localStorage.getItem('theme') || 'light';
-body.classList.add(currentTheme === 'dark' ? 'dark-mode' : 'light-mode');
-updateToggleIcon();
-
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-  const isDarkMode = body.classList.contains('dark-mode');
-  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  updateToggleIcon();
-});
-
-function updateToggleIcon() {
-  const isDarkMode = body.classList.contains('dark-mode');
-  themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-}
-
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-prefersDarkScheme.addEventListener('change', (e) => {
-  const shouldBeDark = e.matches;
-  body.classList.toggle('dark-mode', shouldBeDark);
-  localStorage.setItem('theme', shouldBeDark ? 'dark' : 'light');
-  updateToggleIcon();
-});
-    </script>
-  
-  </body>
+    </div></body>
 </div>
 
  </html>
